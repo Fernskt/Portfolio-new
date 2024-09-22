@@ -2,7 +2,7 @@
 import ToggleButton from './ToggleButton'
 import React, { useState, useEffect } from 'react';
 
-export default function NavBar() {
+export default function NavBar({showNav}) {
   const [darkMode, setDarkMode] = useState(true);
 
   // Verifica la preferencia del sistema al cargar
@@ -28,23 +28,24 @@ export default function NavBar() {
       }
     }
   }, [darkMode]);
-
+ 
+  
   // Alternar entre modo claro y oscuro
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
   return (
-    <div className='navbar'>
+    <div className={showNav ? 'nav-aparecer' : 'navbar'}>
       <div>
         <a href='#' className='logo'><span className='enfasis'>FH</span>Dev</a>
       </div>
       <div className="links">
         <ul>
-          <li><a href="#">Experiencia</a></li>
-          <li><a href="#">Proyectos</a></li>
-          <li><a href="#">Sobre mi</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#experiencia">Experience</a></li>
+          <li><a href="#proyectos">Projects</a></li>
+          <li><a href="#">About me</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
       <div className='tool-bar'>

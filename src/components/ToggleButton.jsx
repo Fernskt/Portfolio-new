@@ -6,7 +6,7 @@ import '../assets/styles/toggle.css';
 //Manejar cambio de idioma, Ingles - Español
 
 const ToggleButton = ({ onChange }) => {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   const { i18n } = useTranslation();
 
   // Manejador de clics que cambia el estado y el idioma

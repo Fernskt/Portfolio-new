@@ -3,32 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #eee8f2;
+  --background-color: #e3e7f7;
   --text-color: #272e41;
   --text-secondary: #3b3f46;
-  --secondary-color: #5059db;
+  --secondary-color: #4d55cb;
   --button-background: #e0e0e0;
   --button-text-color: #000000;
-  --navbar-color: #eee8f2;
+  --navbar-color: #e0e5f0ce;
+  --sombra-navbar: 0px 6px 16px -3px rgba(0, 0, 0, 0.087);
 }
 
 body.dark-mode {
-  --background-color: #0c0c17;
+  --background-color: #101023;
   --text-color: #c6cadb;
   --text-secondary: #81899a;
   --button-background: #444444;
   --button-text-color: #ffffff;
   --secondary-color: #606afc;
-  --navbar-color: #0c104065;
+  --navbar-color: #0c0c2cca;
+  --sombra-navbar: 0px 6px 16px -3px #0000003c;
 
 }
 .dark-mode{
  transition: background-color .3s;
 }
+.btn{
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  color: var(--secondary-color);
+  transition: all .3s;
+}
+.btn:hover{
+  background-color: var(--secondary-color);
+  color: white;
+}
 html{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 h1{
@@ -48,7 +62,6 @@ body {
   font-family: 'montserrat';
 }
 .main-container{
- 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +89,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 300%;
   pointer-events: none; /* Esto asegura que el fondo no interfiera con los clics */
   color: var(--text-color);
  
@@ -87,17 +100,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 3.5rem;
   
 }
 .contenido-hero{
   position: relative;
   z-index: 1;
-  max-width: 50%;
-  
+  max-width: 60%;
+  overflow: hidden;
  
 }
 
 .enfasis{
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--secondary-color);
 }
@@ -111,11 +126,13 @@ body {
   
 }
 .redes ul{
+  position: relative;
   display: flex;
   gap: 2rem;
   list-style-type: none;
  padding: 0;
  margin-top: 2rem;
+ overflow: hidden;
 }
 .redes ul li a{
   text-decoration: none;
@@ -147,17 +164,32 @@ body {
 }
 
 /*---------------------NAV BAR----------------------------------*/
-
+.line-scroll{
+  
+  width: 100%;
+  background-color: var(--background-color);
+  height: 3px;
+ 
+}
+.bar{
+  position: fixed;
+  height: 3px;
+  background-color: var(--secondary-color);
+  width: 0%;
+  animation-name: llenar-barra;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-timeline: scroll();
+  z-index: 100;
+}
 .navbar{
-  position: sticky;
+  position: absolute;
   z-index: 1;
   height: 3.5rem;
-  background-color: var(--navbar-color);
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0px 6px 16px -3px rgba(0, 0, 0, 0.087);
 }
 .logo{
   font-weight: 700;
@@ -190,20 +222,37 @@ body {
   gap: 1rem;
 }
 
+.nav-aparecer{
+  position: fixed;
+  top: 0;
+  height: 3.5rem;
+  background-color: var(--navbar-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: var(--sombra-navbar);
+  backdrop-filter: blur(10px);
+  z-index: 99;
+  animation: show-top both 1s;
+}
+
+
 /*-------EXPERIENCIA-----------------*/
 
-.experiencia{
-  width: 50%;
-  margin-top: 3rem;
+.section{
+  width: 60%;
+  margin:2rem 0;
 }
 .experiencia-list{
   animation: aparecer both;
   animation-timeline: view();
   animation-range: contain -20% cover 50%;
   border-radius: 5px;
-  border: 1px solid #606afc3e;
-  background-color: #606afc08;
+  /* border: 1px solid #606afc3e; */
+  background-color: #3a409a08;
   padding: .5rem;
+  box-shadow: 0px 6px 16px -3px rgba(0, 0, 0, 0.19);
 }
 .text-white{
   color: var(--text-color);
@@ -214,9 +263,153 @@ body {
   color: var(--secondary-color);
 }
 
+
+
+/*--------------CARRUSEL DE CERTIFICADOS---------------------*/
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px; /* Controla la cantidad de difuminado */
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right,var(--background-color), rgba(240, 240, 240, 0));
+}
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left,var(--background-color), rgba(240, 240, 240, 0));
+}
+
+.carousel {
+  display: flex;
+  width: 200%; /* Ajusta para el ancho de todas las imágenes */
+  animation: slide 15s infinite linear; /* Ajusta la duración para la velocidad deseada */
+  
+}
+
+.carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.carousel img {
+  width: 16.76%; /* 100% / Número total de imágenes visibles */
+  margin-right: 10px; /* Espacio entre imágenes */
+  border-radius: 0.5rem;
+}
+
+/*-------PROYECTOS-----------------*/
+
+.card {
+  view-timeline-name: --reveal;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 25% cover 50%;
+  display: flex;
+  background-color: #3a409a08;
+  width: 100%;
+  /* border: 1px solid  #535efe36; */
+  border-radius: .3rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: stretch; /* Asegura que ambos lados (imagen e info) tengan la misma altura */
+  box-shadow: 0px 6px 16px -3px rgba(0, 0, 0, 0.225);
+}
+
+.img {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.img img {
+  width: 100%;
+  height: 15rem; /* La altura de la imagen se ajusta automáticamente */
+  border-radius: .3rem;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  box-shadow: 0px 1px 18px 3px #424efc0d;
+  transition: all .5s;
+}
+.img img:hover{
+  scale: 1.02;
+  box-shadow: 0px 1px 18px 3px #424efc1f;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 14px;
+  padding: 1rem 0; 
+}
+.tecnologies{
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+.icono{
+  margin: .5rem .5rem 0 0;
+}
+.title-responsive{
+  display: none;
+}
+.info h2{
+  margin: 0;
+  font-size: 1.8rem;
+}
+.info p {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.botones{
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*------------FOOTER-------------------*/
+.footer{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.parrafo-footer{
+  max-width: 30rem;
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-105.4%); /* Mueve la mitad del ancho total */
+  }
+}
+
 @media (max-width: 768px) {
   .contenido-hero{
-    max-width: 80%;
+    max-width: 90%;
     position: relative;
     z-index: 0;
    
@@ -224,15 +417,18 @@ body {
   .frase{
     display: none;
   }
-  .experiencia{
-    width: 80%;
+  .section{
+    width: 90%;
     
+  }
+  .carousel {
+    width: 300%;
   }
   .contenido-hero h1{
     font-size: 1.7rem;
   }
   .navbar{
-    position: relative;
+    position: absolute;
   }
  
   .links ul{
@@ -248,8 +444,37 @@ body {
     width: 100vw;
     z-index: 1;
   }
-
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .img, .info{
+    width: 100%;
+    animation: none;
+   
+  }
+  .title-responsive{
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .info{
+    padding: 0 1rem;
+  }
+  .info h2{
+    display: none;
+  }
+  .footer{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+   
+  }
+ 
 }
+
 
 
 /*--------ANIMACIONES--------------*/
@@ -330,9 +555,33 @@ body {
   from{
     opacity: 0;
     
+    
   }
   to{
     opacity: 1;
+    
+    
+  }
+}
+@keyframes show-top {
+  from {
+    opacity: 0.5;
+    transform: translateY(-20px); /* Inicia un poco más arriba */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+@keyframes show {
+  from{
+    opacity: 0;
+    scale: 10%;
+    
+  }
+  to{
+    opacity: 1;
+    scale: 100%;
     
   }
 }
@@ -355,5 +604,15 @@ body {
   to{
     opacity: 1;
     translate: 0%;
+  }
+}
+@keyframes llenar-barra {
+  from{
+    background-color: var(--background-color);
+    width: 0;
+  }
+  to{
+    background-color: var(--secondary-color);
+   width: 100%;
   }
 }
