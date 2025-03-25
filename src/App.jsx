@@ -6,6 +6,7 @@ import Experiencia from './components/Experiencia';
 import Background from './components/Background';
 import Certifications from './components/Certifications';
 import Proyectos from './components/Proyectos';
+import AboutMe from './components/AboutMe';
 import Footer from './components/Footer';
 import LineScroll from './components/LineScroll';
 import React, { useState, useEffect } from 'react';
@@ -34,17 +35,17 @@ function App() {
  
   return (
     <div className='app'>
-      <LineScroll></LineScroll>
-      <NavBar showNav={showNav}></NavBar>
       
+      <NavBar showNav={showNav}></NavBar>
+      <LineScroll></LineScroll>
       <Background></Background>
       <div className="main-container">
       <Hero></Hero>
       <Experiencia></Experiencia>
       <Certifications></Certifications>
       <Proyectos></Proyectos>
+      <AboutMe></AboutMe>
       <Footer></Footer>
-      
       </div>
     </div>
   )
