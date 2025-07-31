@@ -8,10 +8,10 @@ export const getDatos  = (t) => [
     {
       titulo: "Movie App",
       imagen: proyect2,
-      iconos: ["html", "css", "javascript", "bootstrap"],
+      iconos: ["reactjs", "javascript", "bootstrap"],
       descripcion: t('pjct-movie'),
-      linkRepo: "https://github.com/Fernskt/Pelis-Codo-A-Codo",
-      linkProyecto: "https://fernskt.github.io/Pelis-Codo-A-Codo/",
+      linkRepo: "https://github.com/Fernskt/pelis-app",
+      linkProyecto: "https://pelis-app-nine.vercel.app/",
     },
     {
       titulo: "Salary Calculator",
