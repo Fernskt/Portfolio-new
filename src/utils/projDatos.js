@@ -8,18 +8,10 @@ export const getDatos  = (t) => [
     {
       titulo: "Movie App",
       imagen: proyect2,
-      iconos: ["reactjs", "javascript", "bootstrap"],
+      iconos: ["reactjs", "vite", "typescript", "rsuite", "api-rest"],
       descripcion: t('pjct-movie'),
       linkRepo: "https://github.com/Fernskt/pelis-app",
       linkProyecto: "https://pelis-app-nine.vercel.app/",
-    },
-    {
-      titulo: "Salary Calculator",
-      imagen: proyect1,
-      iconos: ["reactjs", "css", "bootstrap"],
-      descripcion: t('pjct-salary'),
-      linkRepo: "https://github.com/Fernskt/Oca-React-App",
-      linkProyecto: "https://fernskt.github.io/Oca-React-App/",
     },
     {
       titulo: "Irish Backoffice",
@@ -38,12 +30,20 @@ export const getDatos  = (t) => [
       linkProyecto: "https://fernskt.github.io/EluneyLandingPage/",
     },
     {
-      titulo: "Library",
+      titulo: "Salary Calculator",
+      imagen: proyect1,
+      iconos: ["reactjs", "css", "bootstrap"],
+      descripcion: t('pjct-salary'),
+      linkRepo: "https://github.com/Fernskt/Oca-React-App",
+      linkProyecto: "https://fernskt.github.io/Oca-React-App/",
+    },
+    {
+      titulo: "HawkByte",
       imagen: proyect6,
-      iconos: ["html", "css", "bootstrap", "java", "spring-boot", "sql"],
-      descripcion: t('pjct-library'),
-      linkRepo: "https://github.com/Fernskt/Biblioteca",
-      linkProyecto: "",
+      iconos: ["html", "css", "javascript", "reactjs"],
+      descripcion: t('pjct-hawkbyte'),
+      linkRepo: "https://github.com/Fernskt/Halcon-byte",
+      linkProyecto: "https://fernskt.github.io/Halcon-byte/",
     },
     
 ];

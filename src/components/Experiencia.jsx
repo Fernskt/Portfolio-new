@@ -41,7 +41,7 @@ export default function Experiencia() {
         ))}
 
       </ol>
-      <button onClick={handleButton}>{verMas?"Show Less":"Show More"}</button>
+      <button onClick={handleButton}>{verMas?"":"Show More"}</button>
     </div>
   );
 }

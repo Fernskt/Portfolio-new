@@ -1,7 +1,6 @@
 import React from 'react';
-import { SpringBootIcon, JavaIcon, Html, Css, Javascript, Bootstrap, SpringSecurity, Hibernate, Sql, Reactjs } from '../icons.jsx';
+import { SpringBootIcon, JavaIcon, Html, Css, Javascript, Bootstrap, SpringSecurity, Hibernate, Sql, Reactjs, Typescript, Vite, Rsuite, Apirest } from '../icons.jsx';
 
-// Mapea los nombres de iconos a los componentes correspondientes
 const iconComponents = {
   'spring-boot': SpringBootIcon,
   'java': JavaIcon,
@@ -12,9 +11,11 @@ const iconComponents = {
   'spring-security': SpringSecurity,
   'hibernate': Hibernate,
   'sql': Sql,
-  'reactjs': Reactjs
-  
-  // Añade más iconos aquí
+  'reactjs': Reactjs,
+  'typescript': Typescript,
+  'vite': Vite,
+  'rsuite': Rsuite,
+  'api-rest': Apirest,
 };
 
 const Icon = ({ name, width = 24, height = 24, ...props }) => {
