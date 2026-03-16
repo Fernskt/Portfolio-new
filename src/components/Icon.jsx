@@ -1,4 +1,3 @@
-import React from 'react';
 import { SpringBootIcon, JavaIcon, Html, Css, Javascript, Bootstrap, SpringSecurity, Hibernate, Sql, Reactjs, Typescript, Vite, Rsuite, Apirest } from '../icons.jsx';
 
 const iconComponents = {

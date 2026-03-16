@@ -1,20 +1,13 @@
-import React from 'react';
-import '../i18n';
 import { useTranslation } from 'react-i18next';
 
-
 const AboutMe = () => {
-    const {t, i18n} = useTranslation();
-    
+    const { t } = useTranslation();
+
     return (
-        <>
-            <div className="section" id="experiencia">
-                <h2 className="titulo" id='aboutMe'>About Me</h2>
-                <p className="description">
-                    <span dangerouslySetInnerHTML={{ __html: t('about-me') }}></span>
-                </p>
-            </div>
-        </>
+        <div className="section" id="aboutMe">
+            <h2 className="titulo">About Me</h2>
+            <p className="description" dangerouslySetInnerHTML={{ __html: t('about-me') }} />
+        </div>
     );
 };
 

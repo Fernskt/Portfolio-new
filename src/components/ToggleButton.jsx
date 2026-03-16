@@ -1,38 +1,24 @@
-import React, { useState, useCallback } from 'react';
-import '../i18n';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../assets/styles/toggle.css';
 
-//Manejar cambio de idioma, Ingles - Español
-
-const ToggleButton = ({ onChange }) => {
+const ToggleButton = () => {
   const [isOn, setIsOn] = useState(true);
   const { i18n } = useTranslation();
 
-  // Manejador de clics que cambia el estado y el idioma
-  const handleClick = useCallback(() => {
-    const newState = !isOn;
-    setIsOn(newState);
-
-    // Cambiar el idioma basado en el nuevo estado
-    if (newState) {
-      i18n.changeLanguage("en");
-    } else {
-      i18n.changeLanguage("es");
-    }
-
-    // Llamar a la función onChange con el nuevo estado
-    if (onChange) {
-      onChange(newState);
-    }
-  }, [isOn, i18n, onChange]);
+  const handleClick = () => {
+    const next = !isOn;
+    setIsOn(next);
+    i18n.changeLanguage(next ? 'en' : 'es');
+  };
 
   return (
     <button
       className={`toggle-button ${isOn ? 'on' : 'off'}`}
       onClick={handleClick}
+      aria-label={isOn ? 'Switch to Spanish' : 'Switch to English'}
     >
-      <span className="slider"></span>
+      <span className="slider" />
     </button>
   );
 };

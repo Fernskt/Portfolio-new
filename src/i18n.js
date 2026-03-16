@@ -21,6 +21,10 @@ const resources = {
         "Software development on web platforms using HTML, CSS, and JavaScript. Configuration and implementation of databases using PostgreSQL. Creation of apps with Material Design and Responsive Design. Version Control: Git and GitHub. Soft skills: Teamwork and Leadership, among others.",
       "exp-computer":
         "Diagnosis and troubleshooting of hardware and software issues, formatting storage units, installing operating systems, antivirus, drivers, etc. Assembling and maintaining equipment and cleaning components.",
+      "pjct-barber":
+        "Modern barber shop website built with React, TypeScript, and CSS. Features a responsive design showcasing services, pricing, and location information with a clean, professional aesthetic.",
+      "pjct-paraiso":
+        "Landing page for Paraíso Tenis Club, built with React and TypeScript. A responsive and visually engaging site presenting the club's courts, memberships, and activities.",
       "pjct-movie":
         "Interactive web application to explore movie trailers, developed with React, Vite, Typescript, and Rsuite. Integrated with the TMDb API, it provides real-time access to titles, descriptions, ratings, and trailers.",
       "pjct-salary":
@@ -55,6 +59,10 @@ const resources = {
         "Desarrollo de software sobre plataformas web en HTML, CSS y Javascript. Configuración e implementación de bases de datos utilizando PostgreSQL. Creación de apps con Material Design y Responsive Design Control de Versiones: Git y GitHub Habilidades blandas: Trabajo en Equipo y Liderazgo, entre otras",
       "exp-computer":
         "Diagnóstico y solución de problemas de hardware y software, formateo unidades de almacenamiento, instalación de S.O, antivirus, drivers etc. Armado y mantenimiento de equipos y limpieza de componentes.",
+      "pjct-barber":
+        "Sitio web moderno para una barbería, desarrollado con React, TypeScript y CSS. Cuenta con un diseño responsivo que presenta los servicios, precios e información de ubicación con una estética limpia y profesional.",
+      "pjct-paraiso":
+        "Landing page para el Paraíso Tenis Club, desarrollada con React y TypeScript. Un sitio responsivo y visualmente atractivo que presenta las canchas, membresías y actividades del club.",
       "pjct-movie":
         "Aplicación web interactiva para explorar trailers de películas, desarrollada con React, Vite, Typescript, y librerías como Rsuite. Integrada con la API de TMDb, ofrece acceso en tiempo real a títulos, descripciones, calificaciones y trailers",
       "pjct-salary":

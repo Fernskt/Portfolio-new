@@ -1,54 +1,42 @@
-
-import './App.css'
-import Hero from './components/Hero';
+import { useState, useEffect } from 'react';
+import './App.css';
 import NavBar from './components/NavBar';
-import Experiencia from './components/Experiencia';
+import LineScroll from './components/LineScroll';
 import Background from './components/Background';
+import Hero from './components/Hero';
+import Experiencia from './components/Experiencia';
 import Certifications from './components/Certifications';
 import Proyectos from './components/Proyectos';
 import AboutMe from './components/AboutMe';
 import Footer from './components/Footer';
-import LineScroll from './components/LineScroll';
-import React, { useState, useEffect } from 'react';
 
 function App() {
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY; 
-      const targetPosition = 100; 
-
-      if (scrollPosition >= targetPosition) {
-        setShowNav(true); 
-      } else {
-        setShowNav(false); 
-      }
+      setShowNav(window.scrollY >= 100);
     };
 
-    window.addEventListener('scroll', handleScroll); 
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
- 
+
   return (
     <div className='app'>
-      
-      <NavBar showNav={showNav}></NavBar>
-      <LineScroll></LineScroll>
-      <Background></Background>
+      <NavBar showNav={showNav} />
+      <LineScroll />
+      <Background />
       <div className="main-container">
-      <Hero></Hero>
-      <Experiencia></Experiencia>
-      <Certifications></Certifications>
-      <Proyectos></Proyectos>
-      <AboutMe></AboutMe>
-      <Footer></Footer>
+        <Hero />
+        <Experiencia />
+        <Certifications />
+        <Proyectos />
+        <AboutMe />
+        <Footer />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

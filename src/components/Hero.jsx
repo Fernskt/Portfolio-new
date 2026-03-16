@@ -1,13 +1,9 @@
-import React from 'react'
-import '../i18n';
 import { useTranslation } from 'react-i18next';
 import foto from '../assets/img/foto.jpg';
 import Redes from './Redes';
 
-
-
 export default function Hero() {
-    const {t, i18n} = useTranslation();
+    const { t } = useTranslation();
 
   return (
     <div className='hero'>
@@ -19,7 +15,7 @@ export default function Hero() {
 
       <h1 className='text' dangerouslySetInnerHTML={{ __html:t('welcome')}}/>
       <p className='description' dangerouslySetInnerHTML={{ __html: t('description') }}/>
-      <Redes></Redes>
+      <Redes />
     </div>
     </div>
   )

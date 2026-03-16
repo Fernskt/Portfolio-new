@@ -1,5 +1,4 @@
-import React from "react";
-import "../i18n";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import { getDatos } from "../utils/projDatos";
@@ -9,7 +8,7 @@ export default function Proyectos() {
   const { t } = useTranslation();
   const datos = getDatos(t);
 
-  const [modalVideoUrl, setModalVideoUrl] = React.useState(null);
+  const [modalVideoUrl, setModalVideoUrl] = useState(null);
 
   const handleModal = (videoUrl) => {
     setModalVideoUrl(videoUrl);

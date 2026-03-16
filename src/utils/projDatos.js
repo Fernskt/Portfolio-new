@@ -4,10 +4,19 @@ import proyect3 from "../assets/img/projects/proyect3.png";
 import proyect4 from "../assets/img/projects/proyect4.png";
 import proyect6 from "../assets/img/projects/proyect6.png";
 import proyect5 from "../assets/img/projects/proyect5.png";
+import proyect7 from "../assets/img/projects/proyect7.png";
+import proyect8 from "../assets/img/projects/proyect8.png";
 import proyect4video from "../assets/vids/irish.mp4";
 
 export const getDatos = (t) => [
-  
+    {
+    titulo: "Barber Shop",
+    imagen: proyect7,
+    iconos: ["reactjs", "css", "typescript"],
+    descripcion: t("pjct-barber"),
+    linkRepo: "https://github.com/Fernskt/Barber-shop",
+    linkProyecto: "https://barber-shop-gl99lz2j6-fernandos-projects-71799bf6.vercel.app/",
+  },
   {
     titulo: "PaloGlow",
     imagen: proyect5,
@@ -15,6 +24,14 @@ export const getDatos = (t) => [
     descripcion: t("pjct-paloglow"),
     linkRepo: "https://github.com/Fernskt/Palo-Glow",
     linkProyecto: "https://paloglow.shop/",
+  },
+  {
+    titulo: "Paraiso Tenis Club",
+    imagen: proyect8,
+    iconos: ["reactjs", "css", "typescript"],
+    descripcion: t("pjct-paraiso"),
+    linkRepo: "https://github.com/Fernskt/paraiso-tenis-club",
+    linkProyecto: "https://paraiso-tenis-club.vercel.app/",
   },
   {
     titulo: "Irish Backoffice",
@@ -63,4 +80,5 @@ export const getDatos = (t) => [
     linkRepo: "https://github.com/Fernskt/Halcon-byte",
     linkProyecto: "https://fernskt.github.io/Halcon-byte/",
   },
+
 ];

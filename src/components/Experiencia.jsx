@@ -1,47 +1,44 @@
-import React, { useState, useEffect } from "react";
-import '../i18n';
+import { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { getDatos  } from '../utils/expDatos';
+import { getDatos } from '../utils/expDatos';
 
 export default function Experiencia() {
   const { t } = useTranslation();
-  const allDatos = getDatos(t);
-  const [datos, setDatos] = useState(allDatos.slice(0, 4));
   const [verMas, setVerMas] = useState(false);
 
-  useEffect(() => {
-    setDatos(verMas ? allDatos : allDatos.slice(0, 4));
-  }, [verMas, t]);
-
-  const handleButton = () => {
-    setVerMas(prev => !prev);
-  };
+  const allDatos = getDatos(t);
+  const datos = verMas ? allDatos : allDatos.slice(0, 4);
 
   return (
     <div className="section" id="experiencia">
       <h2 className="titulo">Experience & Training</h2>
-      <ol class="relative border-s border-blue-200 border-blue-700">
+      <ol className="relative border-s border-blue-700">
 
-        {datos.map((exp) => (
-          <li class="mb-6 ms-6 experiencia-list">
-          <div class="absolute w-7 h-7 bg-blue-200 rounded-full mt-1.5 -start-3.5 border-blue-900 bg-blue-700 flex justify-center items-center">
-            <img src={exp.icon} alt="experienceIco" />
-          </div>
+        {datos.map((exp, idx) => (
+          <li key={idx} className="mb-6 ms-6 experiencia-list">
+            <div className="absolute w-7 h-7 rounded-full mt-1.5 -start-3.5 bg-blue-700 flex justify-center items-center">
+              <img src={exp.icon} alt="" aria-hidden="true" />
+            </div>
 
-          <time class="mb-1 text-sm font-normal leading-none text-blue-400 text-blue-500">
-            {exp.fecha}
-          </time>
-          <h3 class="text-lg font-semibold text-white">
-            {exp.puesto} - <a href={exp.link} target="_blank">{exp.empresa}</a>
-          </h3>
-          <p class="mb-4 text-sm font-normal description">
-          {exp.descripcion}
-          </p>
-        </li>
+            <time className="mb-1 text-sm font-normal leading-none text-blue-500">
+              {exp.fecha}
+            </time>
+            <h3 className="text-lg font-semibold text-white">
+              {exp.puesto} -{" "}
+              <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                {exp.empresa}
+              </a>
+            </h3>
+            <p className="mb-4 text-sm font-normal description">
+              {exp.descripcion}
+            </p>
+          </li>
         ))}
 
       </ol>
-      <button onClick={handleButton}>{verMas?"":"Show More"}</button>
+      <button onClick={() => setVerMas(prev => !prev)}>
+        {verMas ? "Show Less" : "Show More"}
+      </button>
     </div>
   );
 }
