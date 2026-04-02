@@ -1,9 +1,12 @@
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import ToggleButton from './ToggleButton';
 
 export default function NavBar({ showNav }) {
+  const { t } = useTranslation();
   const [darkMode, setDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const backgroundElement = document.querySelector('.background');
@@ -16,17 +19,19 @@ export default function NavBar({ showNav }) {
     }
   }, [darkMode]);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className={showNav ? 'nav-aparecer' : 'navbar'}>
       <div>
         <a href='#' className='logo'><span className='enfasis'>FH</span>Dev</a>
       </div>
       <div className="links">
-        <ul>
-          <li><a href="#experiencia">Experience</a></li>
-          <li><a href="#proyectos">Projects</a></li>
-          <li><a href="#aboutMe">About me</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul className={menuOpen ? 'menu-open' : ''}>
+          <li><a href="#experiencia" onClick={closeMenu}>{t('nav-experience')}</a></li>
+          <li><a href="#proyectos" onClick={closeMenu}>{t('nav-projects')}</a></li>
+          <li><a href="#aboutMe" onClick={closeMenu}>{t('nav-about')}</a></li>
+          <li><a href="#contacto" onClick={closeMenu}>{t('nav-contact')}</a></li>
         </ul>
       </div>
       <div className='tool-bar'>
@@ -45,6 +50,22 @@ export default function NavBar({ showNav }) {
         <p className='idioma'>
           es <ToggleButton /> en
         </p>
+        <button
+          className='hamburger'
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+              <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+          )}
+        </button>
       </div>
     </div>
   );

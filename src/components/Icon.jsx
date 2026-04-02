@@ -1,4 +1,4 @@
-import { SpringBootIcon, JavaIcon, Html, Css, Javascript, Bootstrap, SpringSecurity, Hibernate, Sql, Reactjs, Typescript, Vite, Rsuite, Apirest } from '../icons.jsx';
+import { SpringBootIcon, JavaIcon, Html, Css, Javascript, Bootstrap, SpringSecurity, Hibernate, Sql, Reactjs, Typescript, Vite, Rsuite, Apirest, Tailwind, Redux, TanstackQuery, NestJS, DotNet, Prisma, NodeJS, Supabase } from '../icons.jsx';
 
 const iconComponents = {
   'spring-boot': SpringBootIcon,
@@ -15,6 +15,14 @@ const iconComponents = {
   'vite': Vite,
   'rsuite': Rsuite,
   'api-rest': Apirest,
+  'tailwind': Tailwind,
+  'redux': Redux,
+  'tanstack-query': TanstackQuery,
+  'nestjs': NestJS,
+  'dotnet': DotNet,
+  'prisma': Prisma,
+  'nodejs': NodeJS,
+  'supabase': Supabase,
 };
 
 const Icon = ({ name, width = 24, height = 24, ...props }) => {

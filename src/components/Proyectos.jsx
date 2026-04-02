@@ -16,13 +16,28 @@ export default function Proyectos() {
 
   return (
     <div id="proyectos" className="section">
-      <h2 className="titulo">Projects</h2>
+      <h2 className="titulo">{t('section-projects')}</h2>
 
       {datos.map((proyecto, idx) => (
         <div className="card" key={idx}>
           <div className="img">
             <h2 className="title-responsive">{proyecto.titulo}</h2>
-            <img src={proyecto.imagen} alt="proyecto1" />
+            <div className="project-image-wrapper">
+              <img
+                src={proyecto.imagen}
+                alt={proyecto.titulo}
+                loading="lazy"
+                className="project-image project-image-main"
+              />
+              {proyecto.imagenAlt ? (
+                <img
+                  src={proyecto.imagenAlt}
+                  alt={`${proyecto.titulo} preview alternativo`}
+                  loading="lazy"
+                  className="project-image project-image-alt"
+                />
+              ) : null}
+            </div>
             <div className="tecnologies">
               {proyecto.iconos.map((icono, i) => (
                 <Icon className="icono" name={icono} width={25} height={25} key={i} />
@@ -31,6 +46,7 @@ export default function Proyectos() {
           </div>
           <div className="info">
             <h2>{proyecto.titulo}</h2>
+            <p className="project-impact">{proyecto.impacto}</p>
             <p>{proyecto.descripcion}</p>
             <div className="botones">
               {proyecto.linkProyecto ? (
@@ -40,18 +56,18 @@ export default function Proyectos() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Show Project
+                  {t('show-project')}
                 </a>
               ) : proyecto.video ? (
                 <button
                   onClick={() => handleModal(proyecto.video)}
                   className="btn2"
                 >
-                  Show Video
+                  {t('show-video')}
                 </button>
               ) : null}
               <a href={proyecto.linkRepo} className="btn" target="_blank" rel="noopener noreferrer">
-                Repository
+                {t('show-repo')}
               </a>
             </div>
           </div>

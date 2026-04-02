@@ -5,10 +5,25 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      "nav-experience": "Experience",
+      "nav-projects": "Projects",
+      "nav-about": "About me",
+      "nav-contact": "Contact",
+      "section-experience": "Experience & Training",
+      "section-projects": "Projects",
+      "section-about": "About Me",
+      "show-more": "Show More",
+      "show-less": "Show Less",
+      "show-project": "Show Project",
+      "show-video": "Show Video",
+      "show-repo": "Repository",
+      "skills-title": "Skills",
+      "skills-frontend": "Frontend",
+      "skills-backend": "Backend",
       welcome:
         "Hi! I'm Fernando Hasperué <br> <span class='enfasis'>Full Stack Web Developer</span>",
       description:
-        "Results-driven web developer who designs and manages digital platforms to drive overall product success.</span>",
+        "I build fast, scalable web apps with React — clean component architecture, production-ready backends, and interfaces people actually enjoy using.",
       "exp-oca":
         "Development and maintenance of the company's web applications, ensuring their functionality, performance, and evolution. Version control management and collaboration with Scrum teams to implement improvements and new features to the projects.",
       "exp-nocountry":
@@ -37,16 +52,42 @@ const resources = {
         "Technology solutions company focused on transforming business ideas into solid digital products. I led projects covering every stage from analysis and design to development and QA, delivering web applications, internal systems, and automated processes that optimize resources and boost business performance.",
       "pjct-paloglow":
         "E-commerce built with React and Tailwind, with animations via Framer Motion and routing using React Router. Dynamic catalog powered by Supabase (Postgres + Auth + Storage with RLS), a protected admin panel with full CRUD (featured/stock toggles), and image uploads with client-side compression. On-page SEO via react-helmet, plus store pagination, filtering, and sorting, and a WhatsApp checkout as the MVP. Deployed with the custom domain paloglow.shop.",
+      "contact-availability": "Available for work",
+      "contact-title": "Let's work together",
+      "contact-subtitle": "Open to freelance projects and full-time opportunities. If you have an idea, a problem to solve, or a role to fill — reach out.",
+      "impact-barber": "Client-ready landing page for a modern barbershop.",
+      "impact-paloglow": "Live e-commerce with real customers, Supabase backend, and its own domain.",
+      "impact-paraiso": "Responsive landing page built for an active tennis club.",
+      "impact-irish": "Full-stack system managing real claims in a live business environment.",
+      "impact-movie": "Browse 500k+ movies and trailers in real time via the TMDb API.",
+      "impact-eluney": "Visually-driven landing page for an events and parties company.",
+      "impact-salary": "Practical tool updated with current labor regulations, used by real workers.",
+      "impact-hawkbyte": "Full-cycle tech company site: from analysis and design to development and QA.",
       "about-me":
-        "I am <span style='color: #4e57d2'><b>Fernando Hasperué</b></span>, a fullstack developer committed to excellence in every project. My passion lies in creating digital solutions where user experience and code quality are prioritized at every stage of development. <br/> I always strive to <b>optimize</b> every process and deliver <b>results that make a difference.</b> <br/><br/> I firmly believe in the importance of a well-designed software architecture and the application of <b>best practices</b> that ensure clean and efficient code. <br/> Every project is an opportunity to learn, improve, and add value, and I am motivated by challenges that allow me to <b>grow professionally.</b> <br/><br/> I am open to collaborations and opportunities that drive innovation and the development of technological solutions. <br/><br/> I invite you to explore my portfolio to see some of my work and to connect with me on <a href='https://www.linkedin.com/in/hasperue/' target='_blank'><b>LinkedIn.</b></a> <span style='color: #4e57d2'><b> I am always open to new challenges and opportunities for professional growth.</b></span>",
+        "I'm <span style='color: #4e57d2'><b>Fernando Hasperué</b></span>, a fullstack developer based in Argentina. Since 2023 I've been shipping production web apps — from full claims management systems (<b>Irish Backoffice</b>) to e-commerce platforms with admin panels and real-time data (<b>PaloGlow</b>). <br/><br/> My sweet spot is the <b>React ecosystem</b>: I'm comfortable on the backend too (Java Spring Boot, NestJS, C# .NET), but I pay special attention to frontend performance, component architecture, and making interfaces that feel right to use. <br/><br/> I'm currently working at <b>OCA log S.A.</b> maintaining and evolving internal web platforms. On the side, I keep building — because the best way to get better is to ship things. <br/><br/> If you're looking for someone who writes <b>clean code</b>, communicates clearly, and cares about the product — <a href='https://www.linkedin.com/in/hasperue/' target='_blank' style='color: #4e57d2'><b>let's connect on LinkedIn.</b></a>",
     },
   },
   es: {
     translation: {
+      "nav-experience": "Experiencia",
+      "nav-projects": "Proyectos",
+      "nav-about": "Sobre mí",
+      "nav-contact": "Contacto",
+      "section-experience": "Experiencia y Formación",
+      "section-projects": "Proyectos",
+      "section-about": "Sobre mí",
+      "show-more": "Ver más",
+      "show-less": "Ver menos",
+      "show-project": "Ver proyecto",
+      "show-video": "Ver video",
+      "show-repo": "Repositorio",
+      "skills-title": "Habilidades",
+      "skills-frontend": "Frontend",
+      "skills-backend": "Backend",
       welcome:
         "¡Hola! Soy Fernando Hasperué <br> <span class='enfasis'>Desarrollador Web Full Stack</span>",
       description:
-        " Soy un desarrollador web enfocado en resultados, que diseña y gestiona plataformas digitales para impulsar el éxito integral del producto.</span>",
+        "Construyo aplicaciones web rápidas y escalables con React — arquitectura de componentes limpia, backends listos para producción e interfaces que la gente disfruta usar.",
       "exp-oca":
         "Desarrollo y mantenimiento de aplicaciones web de la empresa, asegurando su funcionalidad, rendimiento y evolución. Gestión del control de versiones y colaboración con equipos Scrum para implementar mejoras y nuevas funcionalidades a los proyectos.",
       "exp-nocountry":
@@ -75,8 +116,19 @@ const resources = {
         "Empresa de soluciones tecnológicas integrales, especializada en transformar ideas de negocio en productos digitales sólidos. Lideré proyectos que abarcaron desde el análisis y diseño hasta el desarrollo y QA, entregando aplicaciones web, sistemas internos y procesos automatizados que optimizan recursos y potencian el rendimiento de las empresas.",
       "pjct-paloglow":
         "E-commerce hecho con React y Tailwind, animaciones con Framer Motion y ruteo con React Router. Catálogo dinámico desde Supabase (Postgres + Auth + Storage con RLS), panel admin protegido con CRUD completo y upload de imágenes con compresión en cliente. SEO on-page con react-helmet, paginado, filtros y orden en la tienda, y checkout por WhatsApp. Deploy con dominio propio paloglow.shop.",
+      "contact-availability": "Disponible para trabajar",
+      "contact-title": "Trabajemos juntos",
+      "contact-subtitle": "Abierto a proyectos freelance y oportunidades de tiempo completo. Si tenés una idea, un problema a resolver o un rol para cubrir — escribime.",
+      "impact-barber": "Landing lista para cliente de una barbería moderna.",
+      "impact-paloglow": "E-commerce en producción con clientes reales, backend en Supabase y dominio propio.",
+      "impact-paraiso": "Landing responsiva para un club de tenis activo.",
+      "impact-irish": "Sistema full-stack gestionando siniestros reales en un entorno empresarial en producción.",
+      "impact-movie": "Explorá más de 500k películas y trailers en tiempo real con la API de TMDb.",
+      "impact-eluney": "Landing visualmente impactante para una empresa de eventos y fiestas.",
+      "impact-salary": "Herramienta práctica actualizada con las últimas regulaciones laborales.",
+      "impact-hawkbyte": "Sitio de empresa tecnológica con ciclo completo: análisis, diseño, desarrollo y QA.",
       "about-me":
-        "Soy <span style='color: #4e57d2'><b>Fernando Hasperué</b></span> , desarrollador fullstack comprometido con la excelencia en cada proyecto. Mi pasión radica en crear soluciones digitales, donde la experiencia del usuario y la calidad del código son prioritarias en todas las etapas del desarrollo. <br/> Siempre busco <b>optimizar</b> cada proceso y entregar <b> resultados que marquen la diferencia.</b> <br/> <br/> Creo firmemente en la importancia de una arquitectura de software bien diseñada y en la aplicación de <b>buenas prácticas</b> que aseguren un código limpio y eficiente. <br/> Cada proyecto es una oportunidad para aprender, mejorar y aportar valor, y me motiva enfrentar desafíos que me permitan <b>crecer profesionalmente.</b> <br/><br/> Estoy abierto a colaboraciones y oportunidades que impulsen la innovación y el desarrollo de soluciones tecnológicas. <br/><br/> Te invito a explorar mi portafolio para conocer algunos de mis trabajos y a conectarte conmigo en <a href='https://www.linkedin.com/in/hasperue/' target='_blank'><b>LinkedIn.</b></a> <span style='color: #4e57d2'><b> Siempre estoy abierto a nuevos desafíos y oportunidades de crecimiento profesional.</b></span>",
+        "Soy <span style='color: #4e57d2'><b>Fernando Hasperué</b></span>, desarrollador fullstack radicado en Argentina. Desde 2023 construyo aplicaciones web en producción — desde sistemas completos de gestión de siniestros (<b>Irish Backoffice</b>) hasta e-commerce con panel de administración y datos en tiempo real (<b>PaloGlow</b>). <br/><br/> Mi zona es el <b>ecosistema React</b>: me manejo también en el backend (Java Spring Boot, NestJS, C# .NET), pero pongo especial atención en el rendimiento del frontend, la arquitectura de componentes y las interfaces que se sienten bien al usarlas. <br/><br/> Actualmente trabajo en <b>OCA log S.A.</b> manteniendo y haciendo evolucionar plataformas web internas. En paralelo, sigo construyendo proyectos propios — porque la mejor manera de mejorar es publicar cosas. <br/><br/> Si buscás a alguien que escriba <b>código limpio</b>, se comunique con claridad y le importe el producto — <a href='https://www.linkedin.com/in/hasperue/' target='_blank' style='color: #4e57d2'><b>conectémonos en LinkedIn.</b></a>",
     },
   },
 };

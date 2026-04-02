@@ -4,10 +4,12 @@ import NavBar from './components/NavBar';
 import LineScroll from './components/LineScroll';
 import Background from './components/Background';
 import Hero from './components/Hero';
+import Skills from './components/Skills';
 import Experiencia from './components/Experiencia';
 import Certifications from './components/Certifications';
 import Proyectos from './components/Proyectos';
 import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -30,9 +32,11 @@ function App() {
       <div className="main-container">
         <Hero />
         <Experiencia />
+        <Skills />
         <Certifications />
         <Proyectos />
         <AboutMe />
+        <Contact />
         <Footer />
       </div>
     </div>

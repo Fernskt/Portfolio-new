@@ -240,6 +240,10 @@ body {
 .tool-bar{
   display: flex;
   gap: 1rem;
+  align-items: center;
+}
+.hamburger{
+  display: none;
 }
 
 .nav-aparecer{
@@ -326,9 +330,54 @@ body {
 }
 
 .carousel img {
-  width: 16.76%; 
+  width: 14.53%; 
   margin-right: 10px; 
   border-radius: 0.5rem;
+}
+
+/*-------SKILLS-----------------*/
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.skill-group-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: var(--background-exp);
+  border: 1px solid #535efe36;
+  border-radius: 0.5rem;
+  padding: 0.85rem 0.9rem 0.65rem;
+  width: 5.75rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.skill-item:hover {
+  border-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px #4e57d220;
+}
+.skill-item span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
 }
 
 /*-------PROYECTOS-----------------*/
@@ -358,16 +407,41 @@ body {
   padding: 1rem;
 }
 
-.img img {
+.project-image-wrapper {
+  position: relative;
   width: 100%;
-  height: 15rem; 
+  height: 15rem;
   border-radius: .3rem;
-  object-fit: cover; 
+  overflow: hidden;
   box-shadow: 0px 1px 18px 3px #424efc0d;
-  transition: all .2s;
 }
-.img img:hover{
-  scale: 1.02;
+
+.project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.project-image-main {
+  opacity: 1;
+}
+
+.project-image-alt {
+  opacity: 0;
+}
+
+.project-image-wrapper:hover .project-image-main {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.project-image-wrapper:hover .project-image-alt {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 .info {
@@ -393,10 +467,17 @@ body {
   margin: 0;
   font-size: 1.8rem;
 }
+.project-impact {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.4rem;
+}
 .info p {
   color: var(--text-secondary);
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 .botones{
@@ -404,6 +485,52 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/*------------CONTACTO-------------------*/
+.contact-section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 3rem 0 2rem;
+}
+.availability-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #22c55e;
+  background-color: #22c55e18;
+  border: 1px solid #22c55e40;
+  border-radius: 2rem;
+  padding: 0.3rem 0.9rem;
+}
+.availability-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  animation: pulse-dot 2s infinite;
+}
+.contact-title{
+  margin-top: 0;
+}
+.contact-subtitle{
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 38rem;
+  margin: 0;
+}
+.contact-ctas{
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
 }
 
 /*------------FOOTER-------------------*/
@@ -450,7 +577,16 @@ body {
   .navbar{
     position: absolute;
   }
- 
+  .hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 4px;
+  }
   .links ul{
     position: absolute;
     display: none;
@@ -460,9 +596,15 @@ body {
     right: 0;
     padding: 1rem 0;
     gap: .5rem;
-    background-color: var(--background-color);
+    background-color: var(--navbar-color);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #0000001b;
+    box-shadow: var(--sombra-navbar);
     width: 100vw;
     z-index: 1;
+  }
+  .links ul.menu-open{
+    display: flex;
   }
   .card {
     display: flex;

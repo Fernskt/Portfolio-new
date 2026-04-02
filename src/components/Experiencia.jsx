@@ -11,7 +11,7 @@ export default function Experiencia() {
 
   return (
     <div className="section" id="experiencia">
-      <h2 className="titulo">Experience & Training</h2>
+      <h2 className="titulo">{t('section-experience')}</h2>
       <ol className="relative border-s border-blue-700">
 
         {datos.map((exp, idx) => (
@@ -37,7 +37,7 @@ export default function Experiencia() {
 
       </ol>
       <button onClick={() => setVerMas(prev => !prev)}>
-        {verMas ? "Show Less" : "Show More"}
+        {verMas ? t('show-less') : t('show-more')}
       </button>
     </div>
   );

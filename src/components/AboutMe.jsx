@@ -5,7 +5,7 @@ const AboutMe = () => {
 
     return (
         <div className="section" id="aboutMe">
-            <h2 className="titulo">About Me</h2>
+            <h2 className="titulo">{t('section-about')}</h2>
             <p className="description" dangerouslySetInnerHTML={{ __html: t('about-me') }} />
         </div>
     );
