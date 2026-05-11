@@ -7,10 +7,10 @@ export default function Contact() {
     <div className="section contact-section" id="contacto">
       <span className="availability-badge">
         <span className="availability-dot" />
-        {t('contact-availability')}
+        {t('contact.availability')}
       </span>
-      <h2 className="titulo contact-title">{t('contact-title')}</h2>
-      <p className="contact-subtitle">{t('contact-subtitle')}</p>
+      <h2 className="titulo contact-title">{t('contact.title')}</h2>
+      <p className="contact-subtitle">{t('contact.subtitle')}</p>
       <div className="contact-ctas">
         <a
           href="https://www.linkedin.com/in/hasperue/"

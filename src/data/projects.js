@@ -9,7 +9,7 @@
  *
  * icons: usá los nombres del Icon.jsx (ej: 'reactjs', 'typescript', 'nodejs', etc.)
  */
-
+import proyect9  from '../assets/img/projects/proyect9.png';
 import proyect7  from '../assets/img/projects/proyect7.png';
 import proyect5  from '../assets/img/projects/proyect5.png';
 import proyect8  from '../assets/img/projects/proyect8.png';
@@ -54,7 +54,22 @@ export const projects = [
     repo: 'https://github.com/Fernskt/Palo-Glow',
     live: 'https://paloglow.shop/',
   },
-
+  {
+    id: 'food',
+    title: 'Food Delivery',
+    image: proyect9,
+    icons: ['reactjs', 'css', 'typescript'],
+    en: {
+      impact: 'Responsive landing page for a trendy food delivery service.',
+      description: "Landing page for a trendy food delivery service, built with React and TypeScript. A responsive and visually engaging site showcasing the menu, ordering process, and contact information.",
+    },
+    es: {
+      impact: 'Landing responsiva para un servicio de comida a domicilio moderno.',
+      description: 'Landing page para un servicio de comida a domicilio moderno, desarrollada con React y TypeScript. Un sitio responsivo y visualmente atractivo que presenta el menú, proceso de pedido e información de contacto.',
+    },
+    repo: '#',
+    live: '#',
+  },
   {
     id: 'paraiso',
     title: 'Paraiso Tenis Club',

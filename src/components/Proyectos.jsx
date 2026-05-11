@@ -16,7 +16,7 @@ export default function Proyectos() {
 
   return (
     <div id="proyectos" className="section">
-      <h2 className="titulo">{t('section-projects')}</h2>
+      <h2 className="titulo">{t('section.projects')}</h2>
 
       {datos.map((proyecto, idx) => (
         <div className="card" key={idx}>
@@ -56,18 +56,18 @@ export default function Proyectos() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('show-project')}
+                  {t('ui.showProject')}
                 </a>
               ) : proyecto.video ? (
                 <button
                   onClick={() => handleModal(proyecto.video)}
                   className="btn2"
                 >
-                  {t('show-video')}
+                  {t('ui.showVideo')}
                 </button>
               ) : null}
               <a href={proyecto.linkRepo} className="btn" target="_blank" rel="noopener noreferrer">
-                {t('show-repo')}
+                {t('ui.showRepo')}
               </a>
             </div>
           </div>

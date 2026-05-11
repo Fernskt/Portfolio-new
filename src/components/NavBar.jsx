@@ -28,10 +28,10 @@ export default function NavBar({ showNav }) {
       </div>
       <div className="links">
         <ul className={menuOpen ? 'menu-open' : ''}>
-          <li><a href="#experiencia" onClick={closeMenu}>{t('nav-experience')}</a></li>
-          <li><a href="#proyectos" onClick={closeMenu}>{t('nav-projects')}</a></li>
-          <li><a href="#aboutMe" onClick={closeMenu}>{t('nav-about')}</a></li>
-          <li><a href="#contacto" onClick={closeMenu}>{t('nav-contact')}</a></li>
+          <li><a href="#experiencia" onClick={closeMenu}>{t('nav.experience')}</a></li>
+          <li><a href="#proyectos" onClick={closeMenu}>{t('nav.projects')}</a></li>
+          <li><a href="#aboutMe" onClick={closeMenu}>{t('nav.about')}</a></li>
+          <li><a href="#contacto" onClick={closeMenu}>{t('nav.contact')}</a></li>
         </ul>
       </div>
       <div className='tool-bar'>

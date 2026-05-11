@@ -13,8 +13,8 @@ export default function Hero() {
             <img src={foto} alt="foto-perfil"/>
         </div>
 
-      <h1 className='text' dangerouslySetInnerHTML={{ __html:t('welcome')}}/>
-      <p className='description' dangerouslySetInnerHTML={{ __html: t('description') }}/>
+      <h1 className='text' dangerouslySetInnerHTML={{ __html: t('hero.welcome') }}/>
+      <p className='description' dangerouslySetInnerHTML={{ __html: t('hero.description') }}/>
       <Redes />
     </div>
     </div>

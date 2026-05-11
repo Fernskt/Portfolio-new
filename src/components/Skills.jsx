@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const skillGroups = [
   {
-    categoryKey: 'skills-frontend',
+    categoryKey: 'skills.frontend',
     skills: [
       { name: 'reactjs',       label: 'React' },
       { name: 'typescript',    label: 'TypeScript' },
@@ -19,7 +19,7 @@ const skillGroups = [
     ],
   },
   {
-    categoryKey: 'skills-backend',
+    categoryKey: 'skills.backend',
     skills: [
       { name: 'nodejs',          label: 'Node.js' },
       { name: 'nestjs',          label: 'NestJS' },
@@ -41,7 +41,7 @@ export default function Skills() {
 
   return (
     <div className="section" id="skills">
-      <h2 className="titulo">{t('skills-title')}</h2>
+      <h2 className="titulo">{t('skills.title')}</h2>
       <div className="skills-groups">
         {skillGroups.map((group) => (
           <div key={group.categoryKey}>
