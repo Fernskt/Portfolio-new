@@ -23,7 +23,7 @@ export default function ModalProyectVideo({ modalVideoUrl, setModalVideoUrl }) {
         onClick={(e) => e.stopPropagation()}
         style={{
           background: 'transparent',
-          borderRadius: 8,
+          borderRadius: 16,
           maxWidth: 900,
           width: "90%",
         }}
