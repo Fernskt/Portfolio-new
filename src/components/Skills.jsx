@@ -1,38 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import Icon from './Icon';
+import { TECH_META } from '../utils/techMeta';
 
 const skillGroups = [
   {
     categoryKey: 'skills.frontend',
-    skills: [
-      { name: 'reactjs',       label: 'React' },
-      { name: 'typescript',    label: 'TypeScript' },
-      { name: 'javascript',    label: 'JavaScript' },
-      { name: 'html',          label: 'HTML' },
-      { name: 'css',           label: 'CSS' },
-      { name: 'tailwind',      label: 'Tailwind' },
-      { name: 'vite',          label: 'Vite' },
-      { name: 'bootstrap',     label: 'Bootstrap' },
-      { name: 'redux',         label: 'Redux' },
-      { name: 'tanstack-query',label: 'TanStack Query' },
-      { name: 'rsuite',        label: 'RSuite' },
-    ],
+    skills: ['reactjs', 'typescript', 'javascript', 'html', 'css', 'tailwind', 'vite', 'bootstrap', 'redux', 'tanstack-query', 'rsuite'],
   },
   {
     categoryKey: 'skills.backend',
-    skills: [
-      { name: 'nodejs',          label: 'Node.js' },
-      { name: 'nestjs',          label: 'NestJS' },
-      { name: 'dotnet',          label: '.NET' },
-      { name: 'java',            label: 'Java' },
-      { name: 'spring-boot',     label: 'Spring Boot' },
-      { name: 'spring-security', label: 'Spring Security' },
-      { name: 'sql',             label: 'SQL' },
-      { name: 'prisma',          label: 'Prisma' },
-      { name: 'supabase',        label: 'Supabase' },
-      { name: 'hibernate',       label: 'Hibernate' },
-      { name: 'api-rest',        label: 'REST API' },
-    ],
+    skills: ['nodejs', 'nestjs', 'dotnet', 'java', 'spring-boot', 'spring-security', 'sql', 'prisma', 'supabase', 'hibernate', 'api-rest'],
   },
 ];
 
@@ -47,12 +24,25 @@ export default function Skills() {
           <div key={group.categoryKey}>
             <p className="skill-group-label">{t(group.categoryKey)}</p>
             <div className="skills-grid">
-              {group.skills.map((skill) => (
-                <div className="skill-item" key={skill.name}>
-                  <Icon name={skill.name} width={32} height={32} />
-                  <span>{skill.label}</span>
-                </div>
-              ))}
+              {group.skills.map((name) => {
+                const { label, color } = TECH_META[name] || { label: name, color: '#535efe' };
+                return (
+                  <div
+                    className="skill-item"
+                    key={name}
+                    style={{
+                      '--skill-bg':           `${color}14`,
+                      '--skill-border':       `${color}55`,
+                      '--skill-hover-bg':     `${color}26`,
+                      '--skill-hover-border': color,
+                      '--skill-shadow':       `${color}35`,
+                    }}
+                  >
+                    <Icon name={name} width={32} height={32} />
+                    <span>{label}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}

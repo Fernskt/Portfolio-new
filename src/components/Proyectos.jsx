@@ -3,22 +3,26 @@ import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import { getDatos } from "../utils/projDatos";
 import ModalProyectVideo from "./ModalProyectVideo";
+import { TECH_META } from "../utils/techMeta";
 
 export default function Proyectos() {
   const { t } = useTranslation();
   const datos = getDatos(t);
 
   const [modalVideoUrl, setModalVideoUrl] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const handleModal = (videoUrl) => {
     setModalVideoUrl(videoUrl);
   };
 
+  const visibleDatos = showAll ? datos : datos.slice(0, 6);
+
   return (
     <div id="proyectos" className="section">
       <h2 className="titulo">{t('section.projects')}</h2>
 
-      {datos.map((proyecto, idx) => (
+      {visibleDatos.map((proyecto, idx) => (
         <div className="card" key={idx}>
           <div className="img">
             <h2 className="title-responsive">{proyecto.titulo}</h2>
@@ -39,9 +43,22 @@ export default function Proyectos() {
               ) : null}
             </div>
             <div className="tecnologies">
-              {proyecto.iconos.map((icono, i) => (
-                <Icon className="icono" name={icono} width={25} height={25} key={i} />
-              ))}
+              {proyecto.iconos.map((icono, i) => {
+                const meta = TECH_META[icono] || { label: icono, color: '#535efe' };
+                return (
+                  <span
+                    key={i}
+                    className="tech-badge"
+                    style={{
+                      '--badge-bg':     `${meta.color}18`,
+                      '--badge-border': `${meta.color}55`,
+                    }}
+                  >
+                    <Icon name={icono} width={13} height={13} />
+                    {meta.label}
+                  </span>
+                );
+              })}
             </div>
           </div>
           <div className="info">
@@ -74,6 +91,13 @@ export default function Proyectos() {
         </div>
       ))}
 
+      {!showAll && datos.length > 6 && (
+        <div className="ver-mas-wrapper">
+          <button className="btn2 ver-mas-btn" onClick={() => setShowAll(true)}>
+            {t('ui.showMore')}
+          </button>
+        </div>
+      )}
       {modalVideoUrl && (
         <ModalProyectVideo modalVideoUrl={modalVideoUrl} setModalVideoUrl={setModalVideoUrl} />
       )}
